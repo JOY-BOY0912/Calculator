@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+
+    body{
+        background-color: lightslategrey;
+    }
+     .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width:100%;
+        margin-top: 100px;
+     }
+     .calculator{
+
+        display: flex;
+        background: #3a4452;      
+        padding: 5px;
+        border-radius: 10px;
+        /*font-size:35px;*/
+        height: 480px;
+        width: 350px;
+        
+     }
+    .display{
+        height: 55px;
+        width: 90%;
+        border: none;
+        background: none;
+        color: white;
+        font-size: 35px;
+        display: flex;
+        text-align: right;
+        margin-right: 15px;
+        padding-right: 15px;
+        margin-top: 15px;
+    }
+    .row1{
+        height: 50px;
+        width: 50px;
+        margin-left: 25px;
+        margin-top: 30px;
+        border-radius: 5px;
+        color: white;
+        font-size: 20px;
+        box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+        border: none;
+        background:transparent;
+    }
+    #equal{
+        width:100px;
+        margin-left: 35px;
+
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form >
+                <div>
+                    <input type="text" name="display" class="display">
+                </div>
+                <div>
+                    <input  class="row1" type="button" value="AC" onclick="display.value = ``">
+                    <input  class="row1" type="button" value="DL" onclick="display.value = display.value.tostring().slice(0,-1)">
+                    <input  class="row1" type="button" value="." onclick="display.value += `.`">
+                    <input  class="row1" type="button" value="/" onclick="display.value += `/`">
+                </div>
+                <div>
+                    <input class="row1" type="button" value="7" onclick="display.value += `7`">
+                    <input class="row1" type="button" value="8" onclick="display.value += `8`">
+                    <input class="row1" type="button" value="9" onclick="display.value += `9`">
+                    <input class="row1" type="button" value="*" onclick="display.value += `*`">
+                </div>
+                <div>
+                    <input class="row1" type="button" value="4" onclick="display.value += `4`">
+                    <input class="row1" type="button" value="5" onclick="display.value += `5`">
+                    <input class="row1" type="button" value="6" onclick="display.value += `6`">
+                    <input class="row1" type="button" value="-" onclick="display.value += `-`">
+                </div>
+                <div>
+                    <input class="row1" type="button" value="1" onclick="display.value += `1`">
+                    <input class="row1" type="button" value="2" onclick="display.value += `2`">
+                    <input class="row1" type="button" value="3" onclick="display.value += `3`">
+                    <input class="row1" type="button" value="+" onclick="display.value += `+`">
+                    
+                </div>
+                <div>
+                    <input class="row1" type="button" value="0" onclick="display.value += `0`">
+                    <input class="row1" type="button" value="00" onclick="display.value += `00`">
+                    <input id="equal"   class="row1" type="button" value="=" onclick="display.value = eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
